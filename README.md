@@ -13,7 +13,17 @@ gem 'automatic1111'
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Setup client
+client = Automatic1111::Client.new(api_endpoint_url: '<http://127.0.0.1:7860 or
+https://xxxxxx.gradio.live')
+
+# Authenticate
+client.post('/login', params: { username: 'username', password: 'password' }, headers: { 'Content-Type' => 'application/x-www-form-urlencoded' })
+
+# Call endpoint
+client.post('/sdapi/v1/txt2img', params: { prompt: 'test' })
+```
 
 ## Development
 

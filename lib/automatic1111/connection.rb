@@ -10,58 +10,28 @@ require "addressable/uri"
 module Automatic1111
   # Network layer for API clients.
   module Connection
-    # Make a HTTP GET request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
-    # @return [Sawyer::Resource]
-    def get(url, options = {}, headers: {})
-      request :get, url, options, headers: headers
+    def get(url, params: {}, headers: {})
+      request :get, url, params, headers: headers
     end
 
-    # Make a HTTP POST request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
-    # @return [Sawyer::Resource]
-    def post(url, options = {}, headers: {})
-      request :post, url, options, headers: headers
+    def post(url, params: {}, headers: {})
+      request :post, url, params, headers: headers
     end
 
-    # Make a HTTP PUT request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
-    # @return [Sawyer::Resource]
-    def put(url, options = {}, headers: {})
-      request :put, url, options, headers: headers
+    def put(url, params: {}, headers: {})
+      request :put, url, params, headers: headers
     end
 
-    # Make a HTTP PATCH request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
-    # @return [Sawyer::Resource]
-    def patch(url, options = {}, headers: {})
-      request :patch, url, options, headers: headers
+    def patch(url, params: {}, headers: {})
+      request :patch, url, params, headers: headers
     end
 
-    # Make a HTTP DELETE request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
-    # @return [Sawyer::Resource]
-    def delete(url, options = {}, headers: {})
-      request :delete, url, options, headers: headers
+    def delete(url, params: {}, headers: {})
+      request :delete, url, params, headers: headers
     end
 
-    # Make a HTTP HEAD request
-    #
-    # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
-    # @return [Sawyer::Resource]
-    def head(url, options = {}, headers: {})
-      request :head, url, options, headers: headers
+    def head(url, params: {}, headers: {})
+      request :head, url, params, headers: headers
     end
 
     # Response for last HTTP request
