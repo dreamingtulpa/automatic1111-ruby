@@ -22,7 +22,8 @@ https://xxxxxx.gradio.live')
 client.post('/login', params: { username: 'username', password: 'password' }, headers: { 'Content-Type' => 'application/x-www-form-urlencoded' })
 
 # Call endpoint
-client.post('/sdapi/v1/txt2img', params: { prompt: 'test' })
+resp = client.post('/sdapi/v1/txt2img', params: { prompt: 'test', sampler_name: 'DPM++ SDE Karras', steps: 20, enable_hr: true, hr_upscaler: 'Latent', denoising_strength: 0.7, width: 512, height: 768 })
+resp['images']
 ```
 
 ## Development
