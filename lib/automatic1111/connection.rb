@@ -50,6 +50,7 @@ module Automatic1111
       connection = Faraday.new(url: api_endpoint_url) do |conn|
         conn.request :retry
         conn.adapter :net_http
+        conn.options.read_timeout = read_timeout
       end
 
       # @last_response = connection.send(method, Addressable::URI.parse(path.to_s).normalize.to_s, data)
